@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <title>Backgrounds</title>
+  </head>
+  <body>
+    <script>
+      let queryParams = Object.fromEntries(new URLSearchParams(location.search));
+      let scriptElement = document.createElement("script");
+
+      let background = queryParams.background || "stars";
+
+      scriptElement.setAttribute("src", `./backgrounds/${background}.js`);
+      scriptElement.setAttribute("type", "module");
+
+      document.body.appendChild(scriptElement);
+    </script>
+  </body>
+</html>
